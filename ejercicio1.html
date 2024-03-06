@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <div>
+        <div style="width: 40%;margin: 0 auto">
+            <h2>
+                Escríbenos !!!
+            </h2>
+            <div class="resultado" style="color:green;font-style: italic">
+            </div>
+            <form id="formulario">
+                <div>
+                    <div style="display: flex;flex-direction: column;">
+                        <label>
+                            Nombre completo
+                        </label>
+                        <input id="nombre" type="text">
+                        <p class="errorNombre" style="color:red;font-style: italic;"></p>
+                    </div>
+                    <div style="display: flex;flex-direction: column;">
+                        <label>
+                            Asunto
+                        </label>
+                        <input id="asunto" type="text">
+                        <p class="errorAsunto" style="color:red;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div style="display: flex;flex-direction: column;">
+                    <label>
+                        Mensaje
+                    </label>
+                    <textarea id="mensaje"></textarea>
+                    <p class="errorMensaje" style="color:red;font-style: italic;"></p>
+                </div>
+                <div>
+                    <button id="botton" type="submit">
+                        Envíar mensaje
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        
+        
+        function validar(event) {
+            event.preventDefault()
+            const nombre = document.querySelector('#nombre')
+            const asunto = document.querySelector('#asunto')
+            const mensaje = document.querySelector('#mensaje')
+            let valido = true
+            if (nombre.value === "" || nombre.value === " " || nombre.value == null) {
+                document.querySelector('.errorNombre').innerText = 'Error este campo es obligatorio.'
+                if(valido===true){
+                    valido = !valido
+                }
+            }else{
+                document.querySelector('.errorNombre').innerText = ''
+            }
+            if (asunto.value === "" || asunto.value === " " || asunto.value == null) {
+                document.querySelector('.errorAsunto').innerText = 'Error este campo es obligatorio.'
+                if(valido===true){
+                    valido = !valido
+                }
+                
+            }else{
+                document.querySelector('.errorAsunto').innerText = ''
+            }
+            if (mensaje.value === "" || mensaje.value === " " || mensaje.value == null) {
+                document.querySelector('.errorMensaje').innerText = 'Error este campo es obligatorio.'
+                if(valido===true){
+                    valido = !valido
+                }
+            }else{
+                document.querySelector('.errorMensaje').innerText = ''
+            }
+
+            if (valido===true){
+                document.querySelector('.resultado').innerText = 'Mensaje enviado con éxito !!!'
+            }else{
+                document.querySelector('.resultado').innerText = ''
+            }
+
+        }
+        const form = document.querySelector('#formulario')
+        form.addEventListener('submit', validar )
+    </script>
+</body>
+
+</html>
