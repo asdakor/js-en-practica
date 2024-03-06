@@ -35,7 +35,22 @@
     </div>
 </div>
     <script>
-    // Escríbe aquí tu código
+        const btn1 = document.querySelector('#btn-1')
+        const btn2 = document.querySelector('#btn-2')
+        const btn3 = document.querySelector('#btn-3')
+        const btn4 = document.querySelector('#btn-4')
+        const btn5 = document.querySelector('#btn-5')
+        const btn6 = document.querySelector('#btn-6')
+        btn1.addEventListener('click', colorbg )
+        btn2.addEventListener('click', colorbg )
+        btn3.addEventListener('click', colorbg )
+        btn4.addEventListener('click', colorbg )
+        btn5.addEventListener('click', colorbg )
+        btn6.addEventListener('click', colorbg )
+        function colorbg(btn){
+            console.log(btn.target.style.backgroundColor)
+            document.querySelector('#caja').style.backgroundColor = btn.target.style.backgroundColor
+        }
     </script>
 </body>
 
