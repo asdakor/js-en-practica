@@ -35,7 +35,23 @@
         </div>
     </div>
     <script>
-    // Escríbe aquí tu código
+        const valor1 = document.querySelector('#valor1')
+        const valor2 = document.querySelector('#valor2')
+        const btnSumar = document.querySelector('#btn-sumar')
+        const btnRestar = document.querySelector('#btn-restar')
+        btnSumar.addEventListener('click', sumar)
+        btnRestar.addEventListener('click', restar)
+        function sumar (){
+            let resultado = (+valor1.value)+(+valor2.value)
+            document.querySelector('.resultado').innerText = resultado
+        }
+        function restar(){
+            let resultado = (+valor1.value)-(+valor2.value)
+            if(resultado<=0){
+                resultado = 0
+            }
+            document.querySelector('.resultado').innerText = resultado
+        }
     </script>
 </body>
 
